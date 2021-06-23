@@ -227,6 +227,7 @@ class ca_people():
 			place_country = row["COUNTRYNM"].strip()
 			place_country_iso = row["ISOALPHA"]
 			if self.print_info:
+				print("                                           ", end="\r")
 				print("Found point {} in {}".format(self.count_selected_people + 1, place_country))
 			# throw a random offset into location based on its size, approximate as circle!
 			orig_radius = math.sqrt(float(row["TOTAL_A_KM"])/math.pi)
@@ -371,7 +372,8 @@ for file_name in global_pop_admin_centroids_files:
 			print("Population count: {}".format(pop_count), end="\r")
 			print_count += print_interval
 	file_handle.close()
-print("\nCheck total population (post selection) = {}".format(pop_count))
+print("Population count: {}".format(pop_count), end="\r")
+print("\nCheck total population (post selection) = {}".format(total_pop))
 
 # calculate the distance to the closet other point for every point, and sum these minimum distances
 #gca_people.selected_people_min_dist()
