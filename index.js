@@ -16,7 +16,7 @@ app.use('/resources', express.static('docs'))
 // Add headers
 app.use(function (req, res, next) {
     // Website you wish to allow to connect
-    res.setHeader('Access-Control-Allow-Origin', 'https://map.globalassembly.org');
+    res.setHeader('Access-Control-Allow-Origin', 'https://sortition.globalassembly.org');
     // Pass to next layer of middleware
     next();
 });
